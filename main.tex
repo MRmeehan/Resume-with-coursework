@@ -1,0 +1,200 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,letterpaper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.85]{geometry}
+\usepackage{multicol}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Thomas}{Meehan}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Chelsea, MA 02150}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{774-217-4022}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with multiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    { #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     { \itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-22mm}
+
+\begin{center}
+\begin{tabular}{ c c c c }
+ \faEnvelopeO\enspace tmeehan.tm@gmail.com &  \faMobile\enspace 774-217-4022 & \faGlobe\enspace http://geodraw.org & \faGithub\enspace MRmeehan \\    
+\end{tabular}
+\end{center}
+\vspace*{-4mm}
+
+\section{Education}
+
+{\customcventry{Jan 2020 - Expected: Dec 2022}{Georgia Institute of Technology}{Master of Computer Science (Machine Learning) }{}{}{}}
+{\begin{itemize}
+\vspace*{2pt}
+  \item \textbf{Knowledge-Based AI:} design and implementation AI agents that can address complex tasks
+  \item \textbf{Educational Technology:} research, design, and agile development of personal project GeoDraw
+  \item \textbf{Intro to OS:} multi-threading, inter-process communication, distributed interactions via RPC
+\end{itemize}}
+\vspace*{5pt}
+{\customcventry{Sep 2010 - May 2014}{University of Massachusetts Amherst}{Bachelor of Science in Mathematics}{}{}{}}
+\vspace{-1mm}
+
+
+\section{Tech Skills}
+Python, \hspace*{2pt} Flask, \hspace*{2pt} TensorFlow,  \hspace*{2pt} SQL,  \hspace*{2pt} C/C++,  \hspace*{2pt} Docker, \hspace*{2pt} Kubernetes, \hspace*{2pt}  AWS/GCP, \hspace*{2pt} JavaScript, \hspace*{2pt} React, \hspace*{2pt}  Git
+
+
+\vspace{-1mm}
+
+\section{GeoDraw (Sole Developer)}
+GeoDraw helps kids learn to write letters. It facilitates handwriting practice on touchscreens by using image recognition. Developed with Kubernetes, Docker, Javascript, Flask, Tensorflow Serving, on the Google Cloud Platform. User accounts and learning management systems are currently in development.
+
+
+\vspace{-1mm}
+
+\section{Certifications}
+
+{\customcventry{Mar 2020}{DeepLearning.AI Professional Certificate}{TensorFlow Developer}{}{}{}}
+\vspace{1mm}
+
+{\customcventry{Dec 2019 - Dec 2022}{Amazon Web Services Professional Certificate}{AWS Certified Solutions Architect Associate}{}{}{}}
+
+\vspace{-1mm}
+
+\section{Career}
+
+{\customcventry{Aug 2017 - Present}{English-Learner Math Teacher}{Everett Public Schools}{Everett, MA}{}
+{\begin{itemize}
+  \item Teach various math subjects to English Language Learners by implementing Spanish and Portuguese during lessons. Acquired the Sheltered English Immersion endorsement in 2018.  
+\vspace*{2pt}
+  \item Enhanced student learning by pushing for the inclusion of computers in the classroom, and using educational tools such as Khan Academy, I-ready, and Prodigy Math.
+\vspace*{2pt}
+  \item Work with other teachers and counselors to track and make educational decisions based on student data.
+  \vspace*{2pt}
+  \item Effectively communicate with students, family, and school administration to support individual learning needs.
+\end{itemize}
+}
+\vspace*{5pt}
+
+}
+
+{\customcventry{Apr 2016 - Jul 2017}{Product Analyst}{Homesite Insurance}{Boston, MA}{}
+{\begin{itemize}
+\vspace*{2pt}
+  \item  Conducted reviews of rates, rules, underwriting, and product offerings. Summarized and presented findings to the Product Management team.
+  \vspace*{2pt}
+  \item Developed processes and reports to track key business metrics, analyzed and interpreted data using SQL, and SAS.
+  \vspace*{2pt}
+  \item Single-handedly automated a time consuming department process with VBA scripting of Microsoft Office products.
+\end{itemize}
+}
+}
+
+
+ 
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+%-----       letter       ---------------------------------------------------------
+
+\end{document}
+
+
+%% end of file `template.tex'.
